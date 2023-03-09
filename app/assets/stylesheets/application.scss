@@ -19,6 +19,7 @@
 :root {
   --app-orange: #f58442;
   --app-orange-dark: #d66724;
+  --app-orange-dark-fade: rgba(214, 103, 36, 0.15);
 }
 
 * {
@@ -89,7 +90,7 @@ table {
 
 table thead tr {
   background-color: var(--app-orange);
-  color: #ffffff;
+  color: white;
   text-align: left;
   font-size: 1.5em;
 }
@@ -100,11 +101,13 @@ table td {
 }
 
 table tbody tr {
-  border-bottom: 1px solid #dddddd;
+  //border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid var(--app-orange-dark-fade);
 }
 
 table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
+  //background-color: #f3f3f3;
+  background-color: var(--app-orange-dark-fade);
 }
 
 table tbody tr:last-of-type {
@@ -116,11 +119,17 @@ table tbody tr:hover {
   color: var(--app-orange);
 }
 
+.table-actions-column {
+  width: 10rem;
+  text-align: end;
+}
+
 .table-actions {
   display: flex;
+  justify-content: flex-end;
 
-  * {
-    margin-right: 1rem;
+  button {
+    margin-left: 1rem;
     border: none;
     background-color: unset;
   }
@@ -160,6 +169,7 @@ table tbody tr:hover {
     background-color: var(--app-orange-dark);
     color: white;
     border: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 
     &:hover, &:visited {
       background-color: var(--app-orange);
