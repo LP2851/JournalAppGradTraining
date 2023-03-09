@@ -32,7 +32,7 @@
   <% end %>
   <% unless @is_new %>
     <div class="form-submit-wrapper">
-      <%=  button_to "CANCEL", @entry, method: :get%>
+      <%= button_to '<i class="far fa-arrow-alt-circle-left"></i> CANCEL'.html_safe, @entry, method: :get%>
     </div>
-  <%  end %>
+  <% end %>
 </section>

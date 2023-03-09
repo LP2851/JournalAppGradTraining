@@ -1,6 +1,6 @@
 <section>
   <h1>
-    RESOURCE:<%=@entry.title%>
+    RESOURCE: <%=@entry.title%>
   </h1>
   <table>
     <tbody>
@@ -24,10 +24,9 @@
     </tbody>
   </table>
   <div class="form-submit-wrapper">
-    <%= button_to "GO BACK", root_path, method: :get %>
+    <%= button_to '<i class="fa fa-edit"></i> EDIT'.html_safe, edit_entry_path(@entry), method: :get %>
   </div>
-<!--  <br>-->
-<!--  <div>-->
-    <%#= link_to "Back to home", root_path %>
-<!--  </div>-->
+  <div class="form-submit-wrapper">
+    <%= button_to '<i class="far fa-arrow-alt-circle-left"></i> GO BACK'.html_safe, root_path, method: :get %>
+  </div>
 </section>
