@@ -51,7 +51,8 @@
   padding-right: 8px;
   display: flex;
   color: white;
-  border-right: 1px solid #111;
+  //border-right: 1px solid #111;
+  border-right: 1px solid var(--app-orange-dark);
   font-size: 25px;
 }
 
@@ -120,7 +121,7 @@ table tbody tr:hover {
 }
 
 .table-actions-column {
-  width: 10rem;
+  width: 10%;
   text-align: end;
 }
 
@@ -139,6 +140,11 @@ table tbody tr:hover {
   color: var(--app-orange);
   margin: 0;
   font-size: 30px;
+
+  &:hover {
+    color: var(--app-orange-dark);
+    transition: color 0.1s ease-in-out;
+  }
 }
 
 // CREATE NEW PAGE FORM
@@ -161,15 +167,22 @@ table tbody tr:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 1.5rem;
 
-  input {
+  form.button_to {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  input, form.button_to button, button {
     width: 66%;
     height: 5rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border: none;
     font-size: 30px;
     background-color: var(--app-orange-dark);
     color: white;
-    border: none;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 
     &:hover, &:visited {
       background-color: var(--app-orange);

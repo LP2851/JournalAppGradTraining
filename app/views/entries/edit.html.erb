@@ -1,0 +1,38 @@
+<section>
+  <h1><%= (@is_new) ? "CREATE NEW" : "UPDATE"%> ENTRY</h1>
+  <%= form_with(model: @entry) do |form| %>
+    <table>
+      <tbody>
+      <tr>
+        <td>
+          <label class="form-label">ENTRY TITLE</label>
+        </td>
+        <td>
+          <%= form.text_field :title, class:"form-text-input", placeholder: 'Resource name...' %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">RESOURCE URL</label>
+        </td>
+        <td>
+          <%= form.text_field :url, class:"form-text-input", placeholder: "Link to resource..." %>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="form-submit-wrapper">
+      <% if @is_new %>
+        <%= form.submit "CREATE ENTRY" %>
+      <% else %>
+        <%= form.submit "UPDATE ENTRY" %>
+        <%#=  button_to "GO BACK", root_path, method: :get  %>
+      <% end %>
+    </div>
+  <% end %>
+  <% unless @is_new %>
+    <div class="form-submit-wrapper">
+      <%= button_to '<i class="far fa-arrow-alt-circle-left"></i> CANCEL'.html_safe, @entry, method: :get%>
+    </div>
+  <% end %>
+</section>
