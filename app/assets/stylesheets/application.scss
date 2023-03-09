@@ -1,0 +1,122 @@
+@import "bootstrap";
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "font-awesome";
+
+:root {
+  --app-orange: #f58442;
+  --app-orange-dark: #d66724;
+}
+
+* {
+  font-family: monospace;
+}
+
+.header {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  background-color: var(--app-orange);
+  height: 5rem;
+  z-index: 999;
+}
+
+.nav-bar {
+  align-items: stretch;
+  display: flex;
+  list-style-type: none;
+}
+
+.nav-link {
+  align-items: center;
+  height: 5rem;
+  padding-left: 8px;
+  padding-right: 8px;
+  display: flex;
+  color: white;
+  border-right: 1px solid #111;
+  font-size: 25px;
+}
+
+.nav-link:hover, .nav-link:visited {
+  background-color: var(--app-orange-dark);
+  color: white;
+  font-weight: bold;
+  font-size: 26px;
+}
+
+section {
+  display: block;
+  padding: 2rem;
+
+  h1 {
+    font-weight: bold;
+    font-size: 50px;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 1.2em;
+  min-width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table thead tr {
+  background-color: var(--app-orange);
+  color: #ffffff;
+  text-align: left;
+  font-size: 1.5em;
+}
+
+table th,
+table td {
+  padding: 12px 15px;
+}
+
+table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+  border-bottom: 2px solid var(--app-orange);
+}
+
+table tbody tr:hover {
+  font-weight: bold;
+  color: var(--app-orange);
+}
+
+.table-actions {
+  display: flex;
+
+  * {
+    margin-right: 1rem;
+  }
+}
+
+.table-icon {
+  color: var(--app-orange);
+}
+
+
+

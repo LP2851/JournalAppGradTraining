@@ -1,21 +1,30 @@
-<h1>All Entries</h1>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>URL</th>
-    <th></th>
-  </tr>
-  <% @entries.each do |entry| %>
-    <tr>
-      <td>
-        <%=entry.title %>
-      </td>
-      <td>
-        <%=entry.url %>
-      </td>
-      <td>
-        <%= button_to "Delete", entry, method: :delete, data: { confirm: "Are you sure you want to delete this Project ?"} %>
-      </td>
-    </tr>
-  <% end %>
-</table>
+<section>
+  <h1>ALL ENTRIES</h1>
+  <table>
+    <thead>
+      <th>TITLE</th>
+      <th>URL</th>
+      <th>ACTIONS</th>
+    </thead>
+    <tbody>
+    <% @entries.each do |entry| %>
+      <tr>
+        <td>
+          <%=entry.title %>
+        </td>
+        <td>
+          <%=entry.url %>
+        </td>
+        <td>
+          <div class="table-actions">
+            <button>View</button>
+            <button>Update</button>
+            <%#= button_to "Delete", entry, method: :delete, data: { confirm: "Are you sure you want to delete this Project ?"}  %>
+            <%= button_to '<i class="fa fa-trash table-icon"></i>'.html_safe, entry, method: :delete %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</section>
