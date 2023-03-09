@@ -140,6 +140,11 @@ table tbody tr:hover {
   color: var(--app-orange);
   margin: 0;
   font-size: 30px;
+
+  &:hover {
+    color: var(--app-orange-dark);
+    transition: color 0.1s ease-in-out;
+  }
 }
 
 // CREATE NEW PAGE FORM
