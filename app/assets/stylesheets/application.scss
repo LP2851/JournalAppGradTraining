@@ -33,6 +33,7 @@
   background-color: var(--app-orange);
   height: 5rem;
   z-index: 999;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .nav-bar {
@@ -111,12 +112,19 @@ table tbody tr:hover {
 
   * {
     margin-right: 1rem;
+    border: none;
+    background-color: unset;
   }
 }
 
 .table-icon {
   color: var(--app-orange);
+  margin: 0;
+  font-size: 30px;
 }
 
-
+.nav-bar-icon {
+  padding-right: 0.5rem;
+  font-size: 30px;
+}
 
