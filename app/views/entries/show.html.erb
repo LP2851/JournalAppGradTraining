@@ -1,0 +1,33 @@
+<section>
+  <h1>
+    RESOURCE:<%=@entry.title%>
+  </h1>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <label class="form-label">RESOURCE URL</label>
+        </td>
+        <td>
+          <%#= form.text_field :url, class:"form-text-input", placeholder: "Link to resource..." %>
+          <%=@entry.url%>
+        </td>
+      </tr>
+    <tr>
+      <td>
+        <label class="form-label">CREATED AT</label>
+      </td>
+      <td>
+        <%=@entry.created_at.strftime("%U %b %Y %H:%M")%>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="form-submit-wrapper">
+    <%= button_to "GO BACK", root_path, method: :get %>
+  </div>
+<!--  <br>-->
+<!--  <div>-->
+    <%#= link_to "Back to home", root_path %>
+<!--  </div>-->
+</section>
