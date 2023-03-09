@@ -1,20 +1,32 @@
 <section>
   <h1>CREATE NEW ENTRY</h1>
   <%= form_with(model: @entry) do |form| %>
-    <div>
-      <%= form.label :title %>
-      <%= form.text_field :title, placeholder: 'Entry title...' %>
-    </div>
-    <div>
-      URL
-      <%= form.text_field :url %>
-    </div>
-    <div>
-      <%= form.submit %>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <label class="form-label">ENTRY TITLE</label>
+          </td>
+          <td>
+            <%= form.text_field :title, class:"form-text-input", placeholder: 'Resource name...' %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label class="form-label">RESOURCE URL</label>
+          </td>
+          <td>
+            <%= form.text_field :url, class:"form-text-input", placeholder: "Link to resource..." %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="form-submit-wrapper">
+      <%= form.submit "CREATE ENTRY"%>
     </div>
   <% end %>
   <br>
   <div>
-    <%= link_to "Back to home", root_path %>
+    <%#= link_to "Back to home", root_path %>
   </div>
 </section>

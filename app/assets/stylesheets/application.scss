@@ -25,6 +25,7 @@
   font-family: monospace;
 }
 
+// NAVIGATION BAR
 .header {
   box-sizing: border-box;
   width: 100%;
@@ -58,8 +59,15 @@
   color: white;
   font-weight: bold;
   font-size: 26px;
+  transition: background-color 0.4s ease-in-out;
 }
 
+.nav-bar-icon {
+  padding-right: 0.5rem;
+  font-size: 30px;
+}
+
+// PAGE STRUCTURE
 section {
   display: block;
   padding: 2rem;
@@ -70,6 +78,7 @@ section {
   }
 }
 
+// HOME PAGE TABLE
 table {
   border-collapse: collapse;
   margin: 25px 0;
@@ -123,8 +132,39 @@ table tbody tr:hover {
   font-size: 30px;
 }
 
-.nav-bar-icon {
-  padding-right: 0.5rem;
-  font-size: 30px;
+// CREATE NEW PAGE FORM
+.form-label {
+  font-size: 1.5em;
 }
 
+.form-text-input {
+  width: 100%;
+  border: 2px solid var(--app-orange-dark);
+
+  &:focus {
+    border: 2px solid var(--app-orange);
+    outline: none;
+    transition: border 0.4s ease-in-out;
+  }
+}
+
+.form-submit-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  input {
+    width: 66%;
+    height: 5rem;
+    font-size: 30px;
+    background-color: var(--app-orange-dark);
+    color: white;
+    border: none;
+
+    &:hover, &:visited {
+      background-color: var(--app-orange);
+      font-weight: bold;
+      transition: background-color 0.1s ease-in-out;
+    }
+  }
+}
