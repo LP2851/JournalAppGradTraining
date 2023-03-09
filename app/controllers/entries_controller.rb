@@ -5,6 +5,8 @@ class EntriesController < ApplicationController
 
   def new
     @entry = Entry.new()
+    @is_new = true
+    render :edit
   end
 
   def create
@@ -23,7 +25,6 @@ class EntriesController < ApplicationController
 
   def edit
     @entry = Entry.find(params[:id])
-    @is_new = false
     render :edit
   end
 
