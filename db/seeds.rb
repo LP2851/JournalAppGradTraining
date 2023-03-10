@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+# Tag.create(name: "python")
+# Tag.create(name: "documentation")
+# Tag.create(name: "graphql")
+# Tag.create(name: "keystonejs")
+# Tag.create(name: "javascript")
+# Tag.create(name: "assets")
+# Tag.create(name: "icons")
+
+# EntryTagging.create(tag:Tag.find(1), entry:Entry.find(18))
+EntryTagging.create(tag:Tag.find(2), entry:Entry.find(18))

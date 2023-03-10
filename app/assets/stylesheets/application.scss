@@ -20,6 +20,8 @@
   --app-orange: #f58442;
   --app-orange-dark: #d66724;
   --app-orange-dark-fade: rgba(214, 103, 36, 0.15);
+  --app-orange-dark-fade-darker: rgba(214, 103, 36, 0.6);
+  --app-orange-dark-fade-darkest: rgba(214, 103, 36, 0.8);
 }
 
 * {
@@ -99,11 +101,12 @@ section {
   width: 100%;
   background-color: var(--app-orange);
 
-  h2 {
+  span {
     padding: 12px 15px;
     color: white;
     font-weight: bold;
     margin-bottom: 0;
+    font-size: 25px;
   }
 }
 
@@ -241,5 +244,24 @@ table tbody tr:hover {
       font-weight: bold;
       transition: background-color 0.1s ease-in-out;
     }
+  }
+}
+
+// TAGGING
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background-color: var(--app-orange-dark-fade-darker);
+  border-radius: 8px;
+  padding: 8px;
+  color: black;
+  margin: 8px;
+
+  &:hover {
+    background-color: var(--app-orange-dark-fade-darkest);
+    transition: background-color 0.1s ease-in-out;
   }
 }

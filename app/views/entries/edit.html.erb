@@ -21,6 +21,14 @@
       </tr>
       <tr>
         <td>
+          <label class="form-label">TAGS</label>
+        </td>
+        <td>
+          <%= form.text_area :tag_list, value: @entry.tag_list_s, class:"form-text-input", placeholder: "Enter a comma separated list of tags..."%>
+        </td>
+      </tr>
+      <tr>
+        <td>
           <label class="form-label">NOTES</label>
         </td>
         <td>

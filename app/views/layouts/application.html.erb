@@ -11,6 +11,15 @@
   <%= javascript_importmap_tags %>
 </head>
 
+<script>
+    $(document).on('ready page:load', function () {
+        $('#entry_tag_ids').chosen({
+            allow_single_deselect: true,
+            width: '100%'
+        })
+    });
+</script>
+
 <body>
 <%= render '/shared/navbar' %>
 <%= yield %>
