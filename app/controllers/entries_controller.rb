@@ -1,6 +1,10 @@
 class EntriesController < ApplicationController
   def index
     @entries = Entry.all
+    if params[:search_by_title] && params[:search_by_title] != ""
+      @entries = @entries.where("title like ?", "%#{params[:search_by_title]}%")
+    end
+
   end
 
   def new
@@ -30,11 +34,11 @@ class EntriesController < ApplicationController
 
   def update
     @entry = Entry.find(params[:id])
-    if @entry.update(params.require(:entry).permit(:title, :url))
-      flash[:success] = "To-do item successfully updated!"
+    if @entry.update(entry_params)
+      flash[:success] =
       redirect_to entry_url(@entry)
     else
-      flash.now[:error] = "To-do item update failed"
+      flash.now[:error] =
       render :edit
     end
   end
@@ -47,7 +51,7 @@ class EntriesController < ApplicationController
   private
 
   def entry_params
-    params.require(:entry).permit(:title, :url)
+    params.require(:entry).permit(:title, :url, :notes)
   end
 
 end

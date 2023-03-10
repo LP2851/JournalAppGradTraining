@@ -8,7 +8,7 @@
           <label class="form-label">ENTRY TITLE</label>
         </td>
         <td>
-          <%= form.text_field :title, class:"form-text-input", placeholder: 'Resource name...' %>
+          <%= form.text_field :title, class:"form-text-input", placeholder: 'Resource name...', required: true %>
         </td>
       </tr>
       <tr>
@@ -17,6 +17,14 @@
         </td>
         <td>
           <%= form.text_field :url, class:"form-text-input", placeholder: "Link to resource..." %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">NOTES</label>
+        </td>
+        <td>
+          <%= form.text_area :notes, class:"form-text-input", placeholder: "Notes about resource...", rows:8%>
         </td>
       </tr>
       </tbody>
