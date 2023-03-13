@@ -1,10 +1,15 @@
 class EntriesController < ApplicationController
   def index
-    @entries = Entry.all
+    @entries = Entry.all.sort_by { |e| e.title }
     if params[:search_by_title] && params[:search_by_title] != ""
-      @entries = @entries.where("title like ?", "%#{params[:search_by_title]}%")
+      @entries = @entries.where("LOWER(title) LIKE ?", "%#{params[:search_by_title].downcase}%")
     end
 
+    p params[:search_by_tags]
+    if params[:search_by_tags] && params[:search_by_tags] != ""
+      @filter_tags = params[:search_by_tags].split(',')
+      @entries = @entries.select { |e| !(e.tag_list_a & @filter_tags).empty? }
+    end
   end
 
   def new
@@ -51,7 +56,6 @@ class EntriesController < ApplicationController
   private
 
   def entry_params
-    params.require(:entry).permit(:title, :url, :notes)
+    params.require(:entry).permit(:title, :tag_list, :notes)
   end
-
 end

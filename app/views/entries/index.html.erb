@@ -3,9 +3,7 @@
   <%= form_tag root_path, method: :get do %>
     <div class="filters-tab">
       <div class="filters-header">
-        <h2>
-          FILTERS
-        </h2>
+        <span>FILTERS</span>
         <div class="filters-actions">
           <%= submit_tag "APPLY" %>
           <%= link_to "CLEAR", root_path, class:"nav-link"%>
@@ -19,6 +17,12 @@
               <%= text_field_tag :search_by_title, params[:search_by_title], class:"filters-search-bar", placeholder: "Search term..."%>
             </td>
           </tr>
+          <tr>
+            <td>SEARCH BY TAG</td>
+            <td>
+              <%= text_field_tag :search_by_tags, params[:search_by_tags], class:"filters-search-bar", placeholder: "Enter search tags in comma seperated list..."%>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -27,7 +31,8 @@
     <thead>
       <th>TITLE</th>
       <th>URL</th>
-      <th style="width: 20%;">CREATED AT</th>
+<!--      <th style="width: 20%;">CREATED AT</th>-->
+      <th>TAGS</th>
       <th class="table-actions-column">ACTIONS</th>
     </thead>
     <tbody>
@@ -39,9 +44,14 @@
         <td style="overflow-wrap: anywhere;">
           <%=entry.url%>
         </td>
-        <td>
-          <%=entry.created_at.strftime("%d %b %Y %H:%M") %>
+        <td class="tag-list">
+          <% entry.tag_list_a.each do |tag| %>
+            <span class="tag"><%=tag%></span>
+          <% end %>
         </td>
+<!--        <td>-->
+          <%#=entry.created_at.strftime("%d %b %Y %H:%M") %>
+<!--        </td>-->
         <td>
           <div class="table-actions">
             <%= button_to '<i class="fa fa-external-link-square table-icon"></i>'.html_safe, entry.url, form: { target: "_blank"}, method: :get %>
