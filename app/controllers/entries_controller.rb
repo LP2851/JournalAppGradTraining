@@ -57,6 +57,6 @@ class EntriesController < ApplicationController
   private
 
   def entry_params
-    params.require(:entry).permit(:title, :tag_list, :notes)
+    params.require(:entry).permit(:title, :url, :tag_list, :notes)
   end
 end
