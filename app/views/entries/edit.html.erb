@@ -30,7 +30,14 @@
           <label class="form-label">TAGS</label>
         </td>
         <td>
-          <%= form.text_area :tag_list, value: @entry.tag_list_s, class:"form-text-input", placeholder: "Enter a comma separated list of tags..."%>
+          <%=
+            form.text_area :tag_list,
+            value: @entry.tag_list_s,
+            class:"form-text-input",
+            placeholder: "Enter a comma separated list of tags...",
+            pattern: /^(([a-zA-Z0-9\-_],)*([a-zA-Z0-9\-_]))?/,
+            title: "Must be a comma separated list e.g. <i>documentation,ruby,rails</i>".html_safe
+          %>
         </td>
       </tr>
       <tr>
