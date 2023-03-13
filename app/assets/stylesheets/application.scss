@@ -22,6 +22,7 @@
   --app-orange-dark-fade: rgba(214, 103, 36, 0.15);
   --app-orange-dark-fade-darker: rgba(214, 103, 36, 0.6);
   --app-orange-dark-fade-darkest: rgba(214, 103, 36, 0.8);
+  --app-disabled-grey: #ababab
 }
 
 * {
@@ -38,6 +39,7 @@
   height: 5rem;
   z-index: 999;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  position: fixed;
 }
 
 .nav-bar {
@@ -74,7 +76,7 @@
 // PAGE STRUCTURE
 section {
   display: block;
-  padding: 2rem;
+  padding: 7rem 2rem;
 
   h1 {
     font-weight: bold;
@@ -188,6 +190,10 @@ table tbody tr:hover {
     margin-left: 1rem;
     border: none;
     background-color: unset;
+
+    &:disabled > .table-icon {
+      color: var(--app-disabled-grey);
+    }
   }
 }
 

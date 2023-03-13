@@ -1,5 +1,6 @@
+<% @title="Home | All Resources" %>
 <section>
-  <h1>ALL ENTRIES</h1>
+  <h1>ALL RESOURCES</h1>
   <%= form_tag root_path, method: :get do %>
     <div class="filters-tab">
       <div class="filters-header">
@@ -49,12 +50,9 @@
             <span class="tag"><%=tag%></span>
           <% end %>
         </td>
-<!--        <td>-->
-          <%#=entry.created_at.strftime("%d %b %Y %H:%M") %>
-<!--        </td>-->
         <td>
           <div class="table-actions">
-            <%= button_to '<i class="fa fa-external-link-square table-icon"></i>'.html_safe, entry.url, form: { target: "_blank"}, method: :get %>
+            <%= button_to '<i class="fa fa-external-link-square table-icon"></i>'.html_safe, entry.url, form: { target: "_blank"}, method: :get, disabled: entry.url.length == 0 %>
             <%= button_to '<i class="fa fa-info-circle table-icon"></i>'.html_safe, entry, method: :get %>
             <%= button_to '<i class="fa fa-edit table-icon"></i>'.html_safe, edit_entry_path(entry), method: :get %>
             <%= button_to '<i class="fa fa-trash table-icon"></i>'.html_safe, entry, method: :delete %>
