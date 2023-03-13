@@ -20,17 +20,7 @@
           <tr>
             <td>SEARCH BY TAG</td>
             <td>
-<!--              <div class="tag-list">-->
-                <%# params[:search_by_tags] do |tag| %>
-<!--                  <span class="tag"><%#=tag%></span>-->
-                <%# end %>
-<!--              </div>-->
               <%= text_field_tag :search_by_tags, params[:search_by_tags], class:"filters-search-bar", placeholder: "Enter search tags in comma seperated list..."%>
-
-              <%#= select_tag "tags", options_for_select(Tag.all.map(&:name)), multiple: true, %>
-
-              <%#= select_tag :search_by_tags, params[:search_by_tags],  class:"filters-search-bar", placeholder: "Search term..."%>
-              <%#= text_field_tag :search_by_tag %>
             </td>
           </tr>
         </tbody>
