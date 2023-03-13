@@ -1,3 +1,4 @@
+<% @title="View | #{@entry.title}" %>
 <section>
   <h1>
     RESOURCE: <%=@entry.title%>
@@ -23,12 +24,6 @@
       </tr>
       <tr>
         <td>
-          <label class="form-label">NOTES</label>
-        </td>
-        <td style="white-space: break-spaces;"><%=@entry.notes%></td>
-      </tr>
-      <tr>
-        <td>
           <label class="form-label">TAGS</label>
         </td>
         <td class="tag-list">
@@ -36,6 +31,12 @@
             <span class="tag"><%=tag%></span>
           <% end %>
         </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">NOTES</label>
+        </td>
+        <td style="white-space: break-spaces;"><%=@entry.notes%></td>
       </tr>
     </tbody>
   </table>

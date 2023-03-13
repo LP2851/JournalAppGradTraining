@@ -1,11 +1,12 @@
+<% @title= @is_new ? "New Resource" : "Edit | #{@entry.title}" %>
 <section>
-  <h1><%= (@is_new) ? "CREATE NEW" : "UPDATE"%> ENTRY</h1>
+  <h1><%= (@is_new) ? "CREATE NEW" : "UPDATE"%> RESOURCE</h1>
   <%= form_with(model: @entry) do |form| %>
     <table>
       <tbody>
       <tr>
         <td>
-          <label class="form-label">ENTRY TITLE</label>
+          <label class="form-label">RESOURCE TITLE</label>
         </td>
         <td>
           <%= form.text_field :title, class:"form-text-input", placeholder: 'Resource name...', required: true %>
@@ -51,12 +52,7 @@
       </tbody>
     </table>
     <div class="form-submit-wrapper">
-      <% if @is_new %>
-        <%= form.submit "CREATE ENTRY" %>
-      <% else %>
-        <%= form.submit "UPDATE ENTRY" %>
-        <%#=  button_to "GO BACK", root_path, method: :get  %>
-      <% end %>
+      <%= form.submit  @is_new ? "CREATE RESOURCE" : "UPDATE RESOURCE" %>
     </div>
   <% end %>
   <% unless @is_new %>
