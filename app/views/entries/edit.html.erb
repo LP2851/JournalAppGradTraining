@@ -16,7 +16,13 @@
           <label class="form-label">RESOURCE URL</label>
         </td>
         <td>
-          <%= form.text_field :url, class:"form-text-input", placeholder: "Link to resource..." %>
+          <%=
+            form.text_field :url,
+            class:"form-text-input",
+            placeholder: "Link to resource...",
+            pattern: /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/,
+            title: "Must contain a valid URL!"
+          %>
         </td>
       </tr>
       <tr>

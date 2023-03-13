@@ -22,6 +22,7 @@
   --app-orange-dark-fade: rgba(214, 103, 36, 0.15);
   --app-orange-dark-fade-darker: rgba(214, 103, 36, 0.6);
   --app-orange-dark-fade-darkest: rgba(214, 103, 36, 0.8);
+  --app-disabled-grey: #ababab
 }
 
 * {
@@ -188,6 +189,10 @@ table tbody tr:hover {
     margin-left: 1rem;
     border: none;
     background-color: unset;
+
+    &:disabled > .table-icon {
+      color: var(--app-disabled-grey);
+    }
   }
 }
 
