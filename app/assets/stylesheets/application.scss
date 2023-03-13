@@ -39,6 +39,7 @@
   height: 5rem;
   z-index: 999;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  position: fixed;
 }
 
 .nav-bar {
@@ -75,7 +76,7 @@
 // PAGE STRUCTURE
 section {
   display: block;
-  padding: 2rem;
+  padding: 7rem 2rem;
 
   h1 {
     font-weight: bold;
