@@ -318,6 +318,7 @@ table tbody tr:hover {
   display: flex;
   justify-content: center;
   font-size: var(--font-header);
+  box-shadow: var(--app-box-shadow);
 
   em:hover {
     color: var(--app-orange);
