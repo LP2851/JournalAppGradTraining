@@ -11,7 +11,7 @@ class EntriesController < ApplicationController
 
     @entries = Entry.all
     handle_filtering
-    @entries = @entries.sort_by { |e| e.title }
+    @entries = @entries.sort_by { |e| e.title.downcase }
     handle_pagination
   end
 
