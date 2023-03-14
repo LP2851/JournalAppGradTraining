@@ -52,6 +52,10 @@ class EntriesController < ApplicationController
   end
 
   def destroy
+    EntryTagging.where("entry_id = #{params[:id]}").each do |e|
+      e.destroy
+    end
+
     Entry.find(params[:id]).destroy
     redirect_to root_url
   end
