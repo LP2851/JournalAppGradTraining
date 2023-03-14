@@ -38,7 +38,7 @@
       <% if @current_page %>
         <span>PAGE
           <span class="pagination-number">
-            <%=@current_page%>
+            <%= (@entries.length > 0) ? @current_page : 0 %>
           </span>
           OF
           <span class="pagination-number">
@@ -86,4 +86,9 @@
     <% end %>
     </tbody>
   </table>
+  <% if @entries.length == 0 %>
+    <div class="no-resources-dialog">
+      <em>No resources found</em>
+    </div>
+  <% end %>
 </section>

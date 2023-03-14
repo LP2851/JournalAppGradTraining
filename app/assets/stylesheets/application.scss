@@ -310,3 +310,18 @@ table tbody tr:hover {
     transition: background-color 0.1s ease-in-out;
   }
 }
+
+.no-resources-dialog {
+  width: 100%;
+  margin-top: -2rem;
+  border-bottom: 2px solid var(--app-orange);
+  display: flex;
+  justify-content: center;
+  font-size: var(--font-header);
+
+  em:hover {
+    color: var(--app-orange);
+    font-weight: bold;
+    transition: color  0.1s ease-in-out;
+  }
+}
