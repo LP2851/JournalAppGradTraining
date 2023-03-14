@@ -22,7 +22,17 @@
   --app-orange-dark-fade: rgba(214, 103, 36, 0.15);
   --app-orange-dark-fade-darker: rgba(214, 103, 36, 0.6);
   --app-orange-dark-fade-darkest: rgba(214, 103, 36, 0.8);
-  --app-disabled-grey: #ababab
+  --app-disabled-grey: #ababab;
+
+  --font-header: 25px;
+  --font-header-hover: 26px;
+  --font-page-heading: 50px;
+  --font-small: 1.2em;
+  --font-large: 30px;
+
+  --app-box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+  --icon-size-large: 30px;
 }
 
 * {
@@ -38,7 +48,7 @@
   background-color: var(--app-orange);
   height: 5rem;
   z-index: 999;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--app-box-shadow);
   position: fixed;
 }
 
@@ -55,22 +65,21 @@
   padding-right: 8px;
   display: flex;
   color: white;
-  //border-right: 1px solid #111;
   border-right: 1px solid var(--app-orange-dark);
-  font-size: 25px;
+  font-size: var(--font-header);
 }
 
 .nav-link:hover {
   background-color: var(--app-orange-dark);
   color: white;
   font-weight: bold;
-  font-size: 26px;
+  font-size: var(--font-header-hover);
   transition: background-color 0.4s ease-in-out;
 }
 
 .nav-bar-icon {
   padding-right: 0.5rem;
-  font-size: 30px;
+  font-size: var(--icon-size-large);
 }
 
 // PAGE STRUCTURE
@@ -80,7 +89,7 @@ section {
 
   h1 {
     font-weight: bold;
-    font-size: 50px;
+    font-size: var(--font-page-heading);
   }
 }
 
@@ -88,9 +97,8 @@ section {
 .filters-tab {
   display: flex;
   width: 100%;
-  //height: 10rem;
   flex-direction: column;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--app-box-shadow);
 
   table {
     margin: 0;
@@ -108,7 +116,7 @@ section {
     color: white;
     font-weight: bold;
     margin-bottom: 0;
-    font-size: 25px;
+    font-size: var(--font-header);
   }
 }
 
@@ -121,7 +129,7 @@ section {
   input, a {
     background-color: var(--app-orange);
     color: white;
-    font-size: 25px;
+    font-size: var(--font-header);
     border: none;
     border-left: 1px solid var(--app-orange-dark);
     text-align: center;
@@ -129,21 +137,54 @@ section {
     &:hover {
       background-color: var(--app-orange-dark);
       font-weight: bold;
-      font-size: 26px;
+      font-size: var(--font-header-hover);
       transition: background-color 0.4s ease-in-out;
     }
   }
 }
 
+// PAGINATION
+.pagination-wrapper {
+  display: flex;
+  width: 100%;
+  //background-color: black;
+  height: 2rem;
+  margin-top: 1rem;
+  margin-bottom: -1rem;
+  flex-direction: row;
+  justify-content: flex-end;
+}
 
+.pagination {
+  align-items: flex-end;
+  justify-content: flex-end;
+  color: var(--app-orange);
+  font-size: var(--font-small);
+
+  .pagination-number {
+    font-weight: bold;
+  }
+
+  .pagination-navigator {
+    padding: 0 1rem;
+    color: var(--app-orange-dark);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--app-orange);
+      font-weight: bold;
+      transition: color  0.1s ease-in-out;
+    }
+  }
+}
 
 // HOME PAGE TABLE
 table {
   border-collapse: collapse;
   margin: 25px 0;
-  font-size: 1.2em;
+  font-size: var(--font-small);
   min-width: 100%;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--app-box-shadow);
 }
 
 table thead tr {
@@ -159,12 +200,10 @@ table td {
 }
 
 table tbody tr {
-  //border-bottom: 1px solid #dddddd;
   border-bottom: 1px solid var(--app-orange-dark-fade);
 }
 
 table tbody tr:nth-of-type(even) {
-  //background-color: #f3f3f3;
   background-color: var(--app-orange-dark-fade);
 }
 
@@ -200,7 +239,7 @@ table tbody tr:hover {
 .table-icon {
   color: var(--app-orange);
   margin: 0;
-  font-size: 30px;
+  font-size: var(--icon-size-large);
 
   &:hover {
     color: var(--app-orange-dark);
@@ -239,9 +278,9 @@ table tbody tr:hover {
   input, form.button_to button, button {
     width: 66%;
     height: 5rem;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--app-box-shadow);
     border: none;
-    font-size: 30px;
+    font-size: var(--font-large);
     background-color: var(--app-orange-dark);
     color: white;
 
