@@ -118,6 +118,13 @@ section {
     font-weight: bold;
     margin-bottom: 0;
     font-size: var(--font-header);
+    display: flex;
+    flex-direction: row;
+
+    i {
+      align-self: center;
+      padding-right: 8px;
+    }
   }
 }
 
