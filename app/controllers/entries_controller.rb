@@ -3,6 +3,7 @@ class EntriesController < ApplicationController
   PAGINATION_AMOUNT = 5
 
   def index
+    check_auth
     @pagination_amount = PAGINATION_AMOUNT
 
     unless params[:pagination]
@@ -16,12 +17,16 @@ class EntriesController < ApplicationController
   end
 
   def new
-    @entry = Entry.new
-    @is_new = true
-    render :edit
+    check_auth
+    if helpers.logged_in?
+      @entry = Entry.new
+      @is_new = true
+      render :edit
+    end
   end
 
   def create
+    check_auth
     @entry = Entry.new(entry_params)
     @is_new = true
     if @entry.save
@@ -32,26 +37,32 @@ class EntriesController < ApplicationController
   end
 
   def show
+    check_auth
     @entry = Entry.find(params[:id])
   end
 
   def edit
+    check_auth
     @entry = Entry.find(params[:id])
-    render :edit
+    if helpers.logged_in?
+      render :edit
+    end
   end
 
   def update
+    check_auth
     @entry = Entry.find(params[:id])
     if @entry.update(entry_params)
       flash[:success] =
       redirect_to entry_url(@entry)
-    else
+    elsif helpers.logged_in?
       flash.now[:error] =
       render :edit
     end
   end
 
   def destroy
+    check_auth
     EntryTagging.where("entry_id = #{params[:id]}").each do |e|
       e.destroy
     end
@@ -61,6 +72,12 @@ class EntriesController < ApplicationController
   end
 
   private
+
+  def check_auth
+    unless helpers.logged_in?
+      redirect_to "/login"
+    end
+  end
 
   def entry_params
     params.require(:entry).permit(:title, :url, :tag_list, :notes)

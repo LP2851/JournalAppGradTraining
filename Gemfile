@@ -12,6 +12,7 @@ gem "sprockets-rails"
 gem "bootstrap"
 gem "sassc-rails"
 gem "font-awesome-sass", "~> 6.3.0"
+gem 'bcrypt'
 
 
 # Use postgresql as the database for Active Record

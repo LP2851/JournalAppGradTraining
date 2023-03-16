@@ -1,0 +1,32 @@
+<section>
+  <h1>SIGN UP</h1>
+
+  <%= form_for @user do |form| %>
+    <table>
+      <tbody>
+      <tr>
+        <td>
+          <label class="form-label">USERNAME</label>
+        </td>
+        <td>
+          <%= form.text_field :username, class:"form-text-input", required: true %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="form-label">PASSWORD</label>
+        </td>
+        <td>
+          <%= form.password_field :password, class:"form-text-input", required: true %>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <% if notice %>
+      <div class="error"><%= notice %></div>
+    <% end %>
+    <div class="form-submit-wrapper">
+      <%= form.submit "CREATE ACCOUNT" %>
+    </div>
+  <% end %>
+</section>

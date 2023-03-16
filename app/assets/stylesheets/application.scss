@@ -56,6 +56,7 @@
   align-items: stretch;
   display: flex;
   list-style-type: none;
+  width: 100%
 }
 
 .nav-link {
@@ -325,4 +326,27 @@ table tbody tr:hover {
     font-weight: bold;
     transition: color  0.1s ease-in-out;
   }
+}
+
+
+// LOGIN SYSTEM
+.nav-bar-right {
+  margin-left: auto;
+  border-left: 1px solid var(--app-orange-dark);
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-bar-user {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.error {
+  color: red;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 2rem;
+  margin-top: -1rem;
 }

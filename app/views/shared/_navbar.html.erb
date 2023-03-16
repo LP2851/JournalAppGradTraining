@@ -2,5 +2,22 @@
   <div class="nav-bar">
       <%= link_to '<i class="fa fa-home nav-bar-icon"></i>HOME'.html_safe, root_path, class:"nav-link"%>
       <%= link_to '<i class="far fa-sticky-note nav-bar-icon"></i>NEW RESOURCE'.html_safe, new_entry_path, class:"nav-link" %>
+    <% if logged_in? %>
+      <div class="nav-bar-right">
+        <div class="nav-bar-user nav-link">
+          <i class="fa fa-user nav-bar-icon"></i>
+            <% current_user %>
+            <%=@current_user.username%>
+        </div>
+          <%= link_to '<i class="fas fa-power-off nav-bar-icon"></i>LOGOUT'.html_safe, logout_path, class:"nav-link" %>
+        </div>
+      </div>
+    <% else %>
+      <div class="nav-bar-right">
+        <div class="nav-bar-user">
+            <%= link_to '<i class="fa fa-user nav-bar-icon"></i>LOGIN'.html_safe, "/login", class:"nav-link" %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

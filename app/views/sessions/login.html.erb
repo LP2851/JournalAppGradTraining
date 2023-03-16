@@ -1,0 +1,35 @@
+<section>
+  <h1>LOGIN</h1>
+  <%= form_with url:'/login' do |form| %>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <label class="form-label">USERNAME</label>
+          </td>
+          <td>
+            <%= form.text_field :username, class:"form-text-input", required: true %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label class="form-label">PASSWORD</label>
+          </td>
+          <td>
+            <%= form.password_field :password, class:"form-text-input", required: true %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <% if notice %>
+      <div class="error"><%= notice %></div>
+    <% end %>
+    <div class="form-submit-wrapper">
+      <%= form.submit "LOGIN" %>
+    </div>
+  <% end %>
+  <div class="form-submit-wrapper">
+    <%= button_to "SIGN UP", new_user_path, method: :get %>
+  </div>
+
+</section>
