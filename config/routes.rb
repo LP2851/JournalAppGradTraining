@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-  # root "sessions#home"
   root 'entries#index'
   resources :entries, only: [:create, :new, :destroy, :show, :edit, :update]
   resources :users, only: [:create, :new]

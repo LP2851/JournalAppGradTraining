@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 
   def new
-    @user = User.new
+    if helpers.logged_in?
+      redirect_to root_path
+    else
+      @user = User.new
+    end
   end
 
   def create
@@ -17,10 +21,6 @@ class UsersController < ApplicationController
       end
     end
   end
-
-  # def show
-  #   @user = User.find(params[:id])
-  # end
 
   private
 
