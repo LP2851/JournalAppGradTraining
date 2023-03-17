@@ -1,3 +1,4 @@
+<% @title="Sign Up" %>
 <section>
   <h1>SIGN UP</h1>
 
@@ -17,7 +18,15 @@
           <label class="form-label">PASSWORD</label>
         </td>
         <td>
-          <%= form.password_field :password, placeholder: "Password", class:"form-text-input", required: true %>
+          <%=
+            form.password_field :password,
+            placeholder: "Password",
+            class:"form-text-input",
+            required: true,
+            pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+            title:
+              "Passwords be at least 8 characters long.\nMust contain one uppercase character.\nMust contain one lowercase character.\nMust contain one special character ($, !, %, *, ?, &)."
+          %>
         </td>
       </tr>
       </tbody>
